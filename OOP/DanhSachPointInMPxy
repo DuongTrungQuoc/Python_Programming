@@ -1,0 +1,50 @@
+#
+# Dinh nghia lop Point2d
+# Nap thu vien toan hoc de dung ham sqrt
+import math
+class Point:
+    def __init__(self,x=0,y=0):
+        self.x = x
+        self.y = y
+    # Phuong thuc tinh khoang cach den goc toa do
+    def distance(self):
+       return math.sqrt(self.x**2 + self.y**2)
+    # Phuong thuc in toa do diem
+    def print_info(self):
+        print("({},{})".format(self.x,self.y))
+    def distance(self,)
+
+p1 = Point()
+p1.print_info()
+p2 = Point(1,3)
+p3 = Point(4,5)
+p2.print_info()
+p3.print_info()
+
+# Tao ds diem
+n = int(input("Nhap so diem trong mat phang: "))
+point_list = []
+#Nhap toa do tung diem
+for i in range(n): 
+    print("Nhap vao diem thu {}".format(i+1))
+    x = int(input("x = "))
+    y = int(input("y = "))
+    p = Point(x,y)
+    point_list.append(p)
+# In ra ds cac diem da nhap
+print("Cacdiem da nhap la: ")
+for p in point_list:
+    p.print_info()
+# Tim mot diem nam xa goc toa do nhat
+max_distance = point_list[0].distance()  
+max_point = point_list[0]
+for p in point_list[1:]:
+    dist = p.distance()
+    if dist > max_distance:
+        max_distance = dist
+        max_point = p
+#In ra diem xa nhat
+print("Diem xa nhat la: ")
+max_point.print_info()
+
+
